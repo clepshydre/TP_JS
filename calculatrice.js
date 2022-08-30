@@ -32,6 +32,7 @@ function calculatrice(){
                 case 'multiplication':
                     result = multiplication(nombre1,nombre2);
                     alert("Le resultat de la multiplication est: "+ result);
+                    break;
                 case "division":
                     if(nombre2 == 0){
                         alert("Il n'est pas possible de diviser par 0")
