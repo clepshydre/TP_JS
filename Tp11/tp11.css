@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url(https://i.ytimg.com/vi/3iIz-ONpLSI/maxresdefault.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameContainer{
+    opacity: 0.90;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2b9f88;
+    border-radius: 10px;
+    border: dashed #004a6f 4px;
+    margin: 10px;
+    padding: 20px;
+    width: fit-content;
+    font-family: 'Press Start 2P', cursive;
+}
+h1{
+    margin: 10px;
+}
+
+h2{
+    margin :10px;
+}
+
+#response{
+    align-self: center;
+    font-size: 15px;
+    padding: 10px 60px;
+    margin: 10px;
+}
+
+.button{
+    align-self: center;
+    font-size: 15px;
+    padding: 10px 100px;
+    margin-bottom: 5px;
+}
