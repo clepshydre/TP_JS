@@ -40,8 +40,10 @@ var responseDOM = document.querySelector("#response");
 var messageDOM = document.querySelector("#message");
 
 var count = 0;
+var searchCount = 0;
 var responseValue;
 var misteryNumber = Math.floor(Math.random()*MISTERY_NUMBER_MAX);
+automaticRecursiveSearch(MISTERY_NUMBER_MIN,MISTERY_NUMBER_MAX);
 
 buttonDOM.addEventListener("click", function(){
     responseValue = getResponse();
@@ -82,6 +84,8 @@ function verifyResponse(){
     }else{
         sendMessage(buildVictoryMessage());
         changeTextButton(NEW_GAME_TEXT_BUTTON);
+        newMisteryNumber();
+        automaticRecursiveSearch(MISTERY_NUMBER_MIN,MISTERY_NUMBER_MAX);
     }
 }
 
@@ -95,4 +99,27 @@ function buildVictoryMessage(){
         victoryMessage +="s";
     }
     return victoryMessage;
+}
+
+function newMisteryNumber(){
+    misteryNumber = Math.floor(Math.random()*MISTERY_NUMBER_MAX);
+}
+
+
+function automaticRecursiveSearch(starting, ending){
+    searchCount++;
+    if(ending< starting){
+        return -1;
+    }
+    let mid = Math.round((starting + ending)/2);
+    if(misteryNumber < mid){
+        ending = mid - 1;
+    }else if(misteryNumber > mid){
+        starting = mid +1;
+    }else{
+        console.log("Le nombre est " + misteryNumber + " il a été trouvé en "+ searchCount + "coups");
+        return mid;
+    }
+    
+    return automaticRecursiveSearch(starting, ending);
 }
