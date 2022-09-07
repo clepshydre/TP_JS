@@ -1,0 +1,18 @@
+body{
+    background-color: blue;
+}
+
+.addNoteContainer{
+    background-color: yellow;
+}
+
+.noteContainer{
+    background-color: yellow;   
+}
+
+.toDoContainer, .doneContainer, .verifiedContainer{
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+}
+
